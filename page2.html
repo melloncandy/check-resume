@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Kittens - Page 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <span>🌓</span>
+    </button>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('darkTheme', document.body.classList.contains('dark-theme'));
+        }
+        if (localStorage.getItem('darkTheme') === 'true') {
+            document.body.classList.add('dark-theme');
+        }
+    </script>
+
+    <section class="kitten-section">
+        <h1>Welcome to Kitten Paradise! 🐱</h1>
+        <div class="kitten-grid">
+            <div class="kitten-card">
+                <img src="https://placekitten.com/300/300" alt="Cute Kitten 1">
+                <p>Playful Whiskers</p>
+            </div>
+            <div class="kitten-card">
+                <img src="https://placekitten.com/301/300" alt="Cute Kitten 2">
+                <p>Sleepy Paws</p>
+            </div>
+            <div class="kitten-card">
+                <img src="https://placekitten.com/302/300" alt="Cute Kitten 3">
+                <p>Curious Felix</p>
+            </div>
+            <div class="kitten-card">
+                <img src="https://placekitten.com/303/300" alt="Cute Kitten 4">
+                <p>Sweet Luna</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-navigation">
+        <a href="index.html" class="nav-button">
+            <span>Page 1</span>
+            <div class="liquid"></div>
+        </a>
+        <a href="page2.html" class="nav-button active">
+            <span>Page 2</span>
+            <div class="liquid"></div>
+        </a>
+        <a href="page3.html" class="nav-button">
+            <span>Page 3</span>
+            <div class="liquid"></div>
+        </a>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
