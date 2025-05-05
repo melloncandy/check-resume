@@ -1,45 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 3</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page 3</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Video background styling */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Ensure your content layers above the video */
+    body {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()">
-        <span>🌓</span>
-    </button>
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('dark-theme');
-            localStorage.setItem('darkTheme', document.body.classList.contains('dark-theme'));
-        }
-        if (localStorage.getItem('darkTheme') === 'true') {
-            document.body.classList.add('dark-theme');
-        }
-    </script>
+  <!-- Background video -->
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="sword.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-    <section>
-        <h1>Page 3</h1>
-        <p>This is your third page. Add your content here!</p>
-    </section>
+  <!-- Theme toggle button -->
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span>🌓</span>
+  </button>
 
-    <div class="page-navigation">
-        <a href="index.html" class="nav-button">
-            <span>Page 1</span>
-            <div class="liquid"></div>
-        </a>
-        <a href="page2.html" class="nav-button">
-            <span>Page 2</span>
-            <div class="liquid"></div>
-        </a>
-        <a href="page3.html" class="nav-button active">
-            <span>Page 3</span>
-            <div class="liquid"></div>
-        </a>
-    </div>
-<script src="script.js"></script>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+      localStorage.setItem('darkTheme', document.body.classList.contains('dark-theme'));
+    }
+    if (localStorage.getItem('darkTheme') === 'true') {
+      document.body.classList.add('dark-theme');
+    }
+  </script>
+
+  <!-- Your page content -->
+  <section>
+    <h1>Page 3</h1>
+    <p>This is your third page. Add your content here!</p>
+  </section>
+
+  <!-- Navigation buttons -->
+  <div class="page-navigation">
+    <a href="index.html" class="nav-button">
+      <span>Page 1</span>
+      <div class="liquid"></div>
+    </a>
+    <a href="page2.html" class="nav-button">
+      <span>Page 2</span>
+      <div class="liquid"></div>
+    </a>
+    <a href="page3.html" class="nav-button active">
+      <span>Page 3</span>
+      <div class="liquid"></div>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
